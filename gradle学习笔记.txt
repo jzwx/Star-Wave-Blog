@@ -1,0 +1,26 @@
+gradle -v //版本查看
+
+gradle build //java项目编译
+
+gradle rootRun //java项目运行
+
+java -jar build/libs/构件编译好的项目jar包名称.jar //启动项目服务器
+
+
+
+
+gradle阿里云中央仓库配置
+repositories {
+		//mavenCentral()
+		maven {
+			url 
+			'http://maven.aliyun.com/nexus/content/groups/public/'
+		}
+	}
+Springboot + SpringData JPA + Hibernate + MySQL + H2 + gradle 数据持久化项目用例 
+
+链接：https://pan.baidu.com/s/1mjLQLlu 密码：flju
+
+7-5
+
+链接：https://pan.baidu.com/s/1i7pJoot 密码：1o13  dubbo
