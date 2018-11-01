@@ -3,9 +3,9 @@ server:
 spring:
   #DataSource
   datasource:
-    url: jdbc:mysql://localhost:3306/blog?useSSL=false&serverTimezone=UTC&characterEncoding=utf-8
-    username: root
-    password: 123456
+    url: jdbc:mysql://47.107.50.13:3306/blog?useSSL=false&serverTimezone=UTC&characterEncoding=utf-8
+    username: dev
+    password: "Cz!&170428"
     driverClassName: com.mysql.jdbc.Driver
     dialect: org.hibernate.dialect.MySQL5InnoDBDialect
   #JPA
@@ -30,8 +30,4 @@ spring:
 # 文件服务器的接口的位置
 file:
   server:
-    url: http://localhost:8081/upload
-
-#spring:
-#  profiles:
-#    active: dev
+    url: http://172.18.19.43:8081/upload
