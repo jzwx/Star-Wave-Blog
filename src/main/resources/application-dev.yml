@@ -22,7 +22,7 @@ spring:
       enabled: true #打开缓存数据库H2的控制台
   data:
     elasticsearch:
-      cluster-nodes: localhost:9300 # 远程服务
+      cluster-nodes: 47.107.50.13:9300 # 远程服务
       properties:
         transport:
           tcp:
