@@ -22,7 +22,7 @@ spring:
       enabled: true #打开缓存数据库H2的控制台
   data:
     elasticsearch:
-      cluster-nodes: localhost:9300 # 远程服务
+      cluster-nodes: 47.107.50.13:9300 # 远程服务
       properties:
         transport:
           tcp:
@@ -30,4 +30,4 @@ spring:
 # 文件服务器的接口的位置
 file:
   server:
-    url: http://172.18.19.43:8081/upload
+    url: http://47.107.50.13:8081/upload
