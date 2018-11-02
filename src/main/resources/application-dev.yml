@@ -14,9 +14,9 @@ spring:
 #    hibernate:
 #      ddl-auto: create-drop #每次启动tomcat都删除数据库
   thymeleaf:
-    prefix: classpath:/templates/
+    prefix: classpath:/templates
     suffix: .html
-    mode: HTML # 使用HTML5标准
+    mode: HTML5 # 使用HTML5标准
     cache: false # 热部署静态文件,禁止使用缓存
     encoding: UTF-8
   h2:
