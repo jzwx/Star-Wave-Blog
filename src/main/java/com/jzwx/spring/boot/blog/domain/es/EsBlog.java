@@ -23,7 +23,7 @@ public class EsBlog implements Serializable {
     @Id //主键
     private String            id;
 
-    @Field(index = FieldIndex.not_analyzed)
+//    @Field(index = FieldIndex.not_analyzed)
     private Long              blogId;                                 // Blog实体的id
 
     private String            title;
@@ -32,22 +32,22 @@ public class EsBlog implements Serializable {
 
     private String            content;
 
-    @Field(index = FieldIndex.not_analyzed) //不做全文检索字段
+//    @Field(index = FieldIndex.not_analyzed) //不做全文检索字段
     private String            username;
 
-    @Field(index = FieldIndex.not_analyzed) //不做全文检索字段
+//    @Field(index = FieldIndex.not_analyzed) //不做全文检索字段
     private String            avatar;
 
-    @Field(index = FieldIndex.not_analyzed) //不做全文检索字段
+//    @Field(index = FieldIndex.not_analyzed) //不做全文检索字段
     private Timestamp         createTime;
 
-    @Field(index = FieldIndex.not_analyzed) //不做全文检索字段
+//    @Field(index = FieldIndex.not_analyzed) //不做全文检索字段
     private Integer           readSize         = 0;                   //访问量、阅读量
 
-    @Field(index = FieldIndex.not_analyzed) //不做全文检索字段
+//    @Field(index = FieldIndex.not_analyzed) //不做全文检索字段
     private Integer           commentSize      = 0;                   //评论量
 
-    @Field(index = FieldIndex.not_analyzed) //不做全文检索字段
+//    @Field(index = FieldIndex.not_analyzed) //不做全文检索字段
     private Integer           voteSize         = 0;                   //点赞量
 
     private String            tags;                                   //标签
