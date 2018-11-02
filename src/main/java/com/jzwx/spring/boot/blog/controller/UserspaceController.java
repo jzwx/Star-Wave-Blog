@@ -183,7 +183,7 @@ public class UserspaceController {
         model.addAttribute("keyword", keyword);
         model.addAttribute("page", page);
         model.addAttribute("blogList", list);
-        return (async == true ? "/userspace/u :: #mainContainerRepleace" : "/userspace/u");
+        return (async == true ? "userspace/u :: #mainContainerRepleace" : "userspace/u");
     }
 
     /**
