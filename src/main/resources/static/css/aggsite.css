@@ -1,0 +1,96 @@
+#footer_bottom {
+    text-align: center;
+    margin-top: 15px;
+    padding-bottom: 20px;
+}
+
+#footer_bottom a {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+a:link, a:visited, a:active {
+    color: #015fb6;
+}
+
+a {
+    outline: 0;
+}
+
+.webkit_any_link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#footer_bottom a:hover{
+    color: orangered;
+}
+
+#friendFooter {
+    margin-left: 180px;
+    margin-right: 320px;
+}
+
+#friendFooter div {
+    display: block;
+}
+
+.friend_block {
+    background-color: #fff;
+    padding: 0;
+    margin: 18px 7px 10px 10px;
+}
+
+.r_b_3 {
+    margin: 0 1px;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.r_b_2 {
+    height: 1px;
+    font-size: 0;
+    line-height: 0;
+    border-left: 2px solid #e6e6e6;
+    border-right: 1px solid #e6e6e6;
+    margin: 0 1px;
+}
+
+.r_b_1 {
+    height: 1px;
+    font-size: 0;
+    line-height: 0;
+    border-left: 2px solid #e6e6e6;
+    border-right: 1px solid #e6e6e6;
+}
+
+#friend_link {
+    line-height: 22px;
+    border-left: 1px solid #e6e6e6;
+    border-right: 1px solid #e6e6e6;
+    padding: 10px;
+    overflow: hidden;
+    color: #404040;
+    word-wrap: break-word;
+}
+
+#friend_link a:hover {
+    text-decoration: underline;
+    color: #e33e06;
+}
+
+#friend_link a:link, #friend_link a:active, #friend_link a:visited {
+    color: #404040;
+    text-decoration: none;
+}
+
+#friend_link a {
+    margin-right: 8px;
+}
+
+#friend_link a:hover {
+    color: #e33e06;
+}
