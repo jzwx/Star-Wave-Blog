@@ -118,7 +118,7 @@ public class UserspaceController {
     public ModelAndView avatar(@PathVariable("username") String username, Model model) {
         User user = (User) userDetailsService.loadUserByUsername(username);
         model.addAttribute("user", user);
-        return new ModelAndView("/userspace/avatar", "userModel", model);
+        return new ModelAndView("userspace/avatar", "userModel", model);
     }
 
     /**
