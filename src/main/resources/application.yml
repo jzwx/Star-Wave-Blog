@@ -16,7 +16,7 @@ spring:
   thymeleaf:
     prefix: classpath:/templates/
     suffix: .html
-    mode: HTML5 # 使用HTML5标准
+    mode: HTML # 使用HTML5标准
     cache: false # 热部署静态文件,禁止使用缓存
     encoding: UTF-8
   h2:
