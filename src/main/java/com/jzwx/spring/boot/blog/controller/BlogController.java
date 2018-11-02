@@ -73,7 +73,7 @@ public class BlogController {
             List<User> users = esBlogService.listTop12Users();
             model.addAttribute("users", users);
         }
-        return (async==true?"index :: #mainContainerRepleace":"index");
+        return (async==true?"index :: #mainContainerRepleace":"/index");
     }
 
     @GetMapping("/newest")
