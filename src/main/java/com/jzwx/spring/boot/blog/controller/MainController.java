@@ -32,7 +32,7 @@ public class MainController {
 
     @GetMapping("/")
     public String root(){
-        return "redirect:index";
+        return "redirect:/index";
     }
 
     @GetMapping("/index")
