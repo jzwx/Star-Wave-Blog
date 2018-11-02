@@ -244,7 +244,7 @@ public class UserspaceController {
         model.addAttribute("catalogs",catalogs);
         model.addAttribute("blog", new Blog(null, null, null));
         model.addAttribute("fileServerUrl", fileServerUrl);//文件服务器的地址返回给客户端
-        return new ModelAndView("/userspace/blogedit", "blogModel", model);
+        return new ModelAndView("userspace/blogedit", "blogModel", model);
     }
 
     /**
@@ -262,7 +262,7 @@ public class UserspaceController {
         model.addAttribute("catalogs",catalogs);
         model.addAttribute("blog", blogService.getBlogById(id));
         model.addAttribute("fileServerUrl", fileServerUrl);//文件服务器的地址返回给客户端
-        return new ModelAndView("/userspace/blogedit", "blogModel", model);
+        return new ModelAndView("userspace/blogedit", "blogModel", model);
     }
 
     /**
