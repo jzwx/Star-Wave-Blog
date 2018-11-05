@@ -104,3 +104,14 @@ article img {
 #md {
     height:400px;
 }
+
+#header_btn a, a:link, a:visited, a:active {
+    color: #5cb85c;
+}
+
+body {
+    min-width: 1116px;
+    line-height: 24px;
+    font-size: 16px;
+    background: #f5f6f7;
+}

@@ -44,6 +44,7 @@
           rel="stylesheet">
     <link href="../../css/blog.css" th:href="@{/css/blog.css}" rel="stylesheet">
     <link href="../../css/aggsite.css" th:href="@{/css/aggsite.css}" rel="stylesheet">
+    <link href="../../css/header-test.css" th:href="@{/css/header-test.css}" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-inverse bg-inverse navbar-toggleable-md">
@@ -58,51 +59,134 @@
         <div class="collapse navbar-collapse" id="navbarsContainer">
 
             <ul class="navbar-nav mr-auto">
+                <!--<li class="nav-item">-->
+                    <!--<a class="nav-link" href="javascript:void(0)" th:attr="url='/blogs?order=new'">最新 <span-->
+                            <!--class="sr-only">(current)</span></a>-->
+                <!--</li>-->
+                <!--<li class="nav-item">-->
+                    <!--<a class="nav-link" href="javascript:void(0)" th:attr="url='/blogs?order=hot'">最热</a>-->
+                <!--</li>-->
                 <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0)" th:attr="url='/blogs?order=new'">最新 <span
-                            class="sr-only">(current)</span></a>
+                    <a href="https://blog.csdn.net" class="nav-link" title="博客" target="_blank">博客</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0)" th:attr="url='/blogs?order=hot'">最热</a>
+                    <a href="https://edu.csdn.net" title="学院" class="nav-link" target="_blank">学院</a>
                 </li>
-                <form class="form-inline mt-2 mt-md-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="搜索" id="indexkeyword"
-                           th:value="${keyword}">
-                    <a href="javascript:void(0)" class="btn btn-outline-secondary my-2 my-sm-0" id="indexsearch"><i
-                            class="fa fa-search"
-                            aria-hidden="true"></i></a>
-                </form>
-
+                <li>
+                    <a href="http://bbs.csdn.net" title="论坛" class="nav-link" target="_blank">论坛</a>
+                </li>
+                <li>
+                    <a href="http://mall.csdn.net" title="商城" class="nav-link" target="_blank">商城</a>
+                </li>
+                <li>
+                    <a href="http://download.csdn.net/vip_code" class="nav-link" title="VIP会员" target="_blank">VIP会员</a>
+                </li>
+                <li>
+                    <a href="http://huiyi.csdn.net/" title="活动" class="nav-link" target="_blank">活动</a>
+                </li>
+                <li>
+                    <a href="http://job.csdn.net" title="招聘" class="nav-link" target="_blank">招聘</a>
+                </li>
             </ul>
-            <div sec:authorize="isAuthenticated()" class="row">
-                <div class="dropdown">
-                    <a class=" dropdown-toggle" href="/u/waylau" th:href="@{'/u/' + ${#authentication.name}}"
-                       data-toggle="dropdown"><span sec:authentication="name"></span></a>
-                    <div class="dropdown-menu">
-                        <a class=" dropdown-item" href="/u/waylau" th:href="@{'/u/' + ${#authentication.name}}">个人主页</a>
-                        <a class="dropdown-item" href="/u/waylau/profile"
-                           th:href="@{'/u/' + ${#authentication.name}} + '/profile'">个人设置</a>
+
+            <form class="form-inline my-2 my-sm-0">
+                <input class="form-control my-2 my-sm-0" type="text" placeholder="搜索" id="indexkeyword"
+                       th:value="${keyword}">
+                <a href="javascript:void(0)" class="btn btn-outline-secondary my-2 my-sm-0" id="indexsearch"><i
+                        class="fa fa-search"
+                        aria-hidden="true"></i></a>
+            </form>
+             &nbsp;&nbsp;
+            <div id="header_btn">
+                <div sec:authorize="isAuthenticated()" class="row">
+                    <div class="dropdown">
+                        <a class=" dropdown-toggle" href="/u/waylau" th:href="@{'/u/' + ${#authentication.name}}"
+                           data-toggle="dropdown"><span sec:authentication="name"></span></a>
+                        <div class="dropdown-menu">
+                            <a class=" dropdown-item" href="/u/waylau" th:href="@{'/u/' + ${#authentication.name}}">个人主页</a>
+                            <a class="dropdown-item" href="/u/waylau/profile"
+                               th:href="@{'/u/' + ${#authentication.name}} + '/profile'">个人设置</a>
+                        </div>
                     </div>
+                    <div>
+                        <a href="/u/waylau/blogs/edit" th:href="'/u/' + ${#authentication.name} + '/blogs/edit'"
+                           class="btn btn-outline-success my-2 my-sm-0" style="padding: 6px 15px;">写博客</a>
+                    </div>
+
+                    <form action="/logout" th:action="@{/logout}" method="post">
+                        <input class="btn btn-outline-success " style="padding: 6px 15px;" type="submit" value="退出">
+                    </form>
                 </div>
-                <div>
-                    <a href="/u/waylau/blogs/edit" th:href="'/u/' + ${#authentication.name} + '/blogs/edit'"
-                       class="btn btn-outline-success my-2 my-sm-0">写博客</a>
+
+
+                <div sec:authorize="isAnonymous()">
+                    <a href="/login" class="btn btn-outline-success my-2 my-sm-0" style="padding: 6px 15px;" type="submit">登录</a>
+                    <a href="/register" class="btn btn-outline-success my-2 my-sm-0" style="padding: 6px 15px;" type="submit">注册</a>
                 </div>
-
-                <form action="/logout" th:action="@{/logout}" method="post">
-                    <input class="btn btn-outline-success " type="submit" value="退出">
-                </form>
             </div>
-
-
-            <div sec:authorize="isAnonymous()">
-                <a href="/login" class="btn btn-outline-success my-2 my-sm-0" type="submit">登录</a>
-                <a href="/register" class="btn btn-outline-success my-2 my-sm-0" type="submit">注册</a>
-            </div>
-
         </div>
-
     </div>
 </nav>
+
+
+
+<!--<nav class="navbar navbar-inverse bg-inverse navbar-toggleable-md">-->
+    <!--<div class="container">-->
+        <!--<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"-->
+                <!--data-target="#navbarsContainer" aria-controls="navbarsExampleContainer" aria-expanded="false"-->
+                <!--aria-label="Toggle navigation">-->
+            <!--<span class="navbar-toggler-icon"></span>-->
+        <!--</button>-->
+        <!--<a class="navbar-brand" href="/" th:href="@{/}">StarWaveBlog</a>-->
+
+        <!--<div class="collapse navbar-collapse" id="navbarsContainer">-->
+
+            <!--<ul class="navbar-nav mr-auto">-->
+                <!--<li class="nav-item">-->
+                    <!--<a class="nav-link" href="javascript:void(0)" th:attr="url='/blogs?order=new'">最新 <span-->
+                            <!--class="sr-only">(current)</span></a>-->
+                <!--</li>-->
+                <!--<li class="nav-item">-->
+                    <!--<a class="nav-link" href="javascript:void(0)" th:attr="url='/blogs?order=hot'">最热</a>-->
+                <!--</li>-->
+                <!--<form class="form-inline mt-2 mt-md-0">-->
+                    <!--<input class="form-control mr-sm-2" type="text" placeholder="搜索" id="indexkeyword"-->
+                           <!--th:value="${keyword}">-->
+                    <!--<a href="javascript:void(0)" class="btn btn-outline-secondary my-2 my-sm-0" id="indexsearch"><i-->
+                            <!--class="fa fa-search"-->
+                            <!--aria-hidden="true"></i></a>-->
+                <!--</form>-->
+
+            <!--</ul>-->
+            <!--<div id="header_btn">-->
+                <!--<div sec:authorize="isAuthenticated()" class="row">-->
+                    <!--<div class="dropdown">-->
+                        <!--<a class=" dropdown-toggle" href="/u/waylau" th:href="@{'/u/' + ${#authentication.name}}"-->
+                           <!--data-toggle="dropdown"><span sec:authentication="name"></span></a>-->
+                        <!--<div class="dropdown-menu">-->
+                            <!--<a class=" dropdown-item" href="/u/waylau" th:href="@{'/u/' + ${#authentication.name}}">个人主页</a>-->
+                            <!--<a class="dropdown-item" href="/u/waylau/profile"-->
+                               <!--th:href="@{'/u/' + ${#authentication.name}} + '/profile'">个人设置</a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div>-->
+                        <!--<a href="/u/waylau/blogs/edit" th:href="'/u/' + ${#authentication.name} + '/blogs/edit'"-->
+                           <!--class="btn btn-outline-success my-2 my-sm-0">写博客</a>-->
+                    <!--</div>-->
+
+                    <!--<form action="/logout" th:action="@{/logout}" method="post">-->
+                        <!--<input class="btn btn-outline-success " type="submit" value="退出">-->
+                    <!--</form>-->
+                <!--</div>-->
+
+
+                <!--<div sec:authorize="isAnonymous()">-->
+                    <!--<a href="/login" class="btn btn-outline-success my-2 my-sm-0" type="submit">登录</a>-->
+                    <!--<a href="/register" class="btn btn-outline-success my-2 my-sm-0" type="submit">注册</a>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</nav>-->
 </body>
 </html>
