@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 /**
  * SecurityConfig 安全配置类
@@ -59,6 +60,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                 .and()
                 .formLogin() //基于Form 表单登录验证
                 .loginPage("/login").failureUrl("/login-error") //自定义登录界面
+                .and()
+                .logout()
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout", "GET"))
+//                .logoutUrl("/logout")//触发注销操作的url
+//                .logoutSuccessUrl("/logout/page")//注销成功后跳转的url
+                .deleteCookies("JSESSIONID")
+                .invalidateHttpSession(true)//指定是否在注销时让HttpSession无效
                 .and().rememberMe().key(KEY)//启用 remember me
                 .and().exceptionHandling().accessDeniedPage("/403");//处理异常，拒绝访问就重定向到403页面
         http.csrf().ignoringAntMatchers("/h2-console/**");//禁用h2控制台的 CSRF 防护
