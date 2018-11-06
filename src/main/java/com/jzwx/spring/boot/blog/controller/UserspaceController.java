@@ -228,7 +228,7 @@ public class UserspaceController {
         model.addAttribute("currentVote",currentVote);
         model.addAttribute("isBlogOwner", isBlogOwner);
         model.addAttribute("blogModel", blog);
-        return "/userspace/blog";
+        return "userspace/blog";
     }
 
     /**
