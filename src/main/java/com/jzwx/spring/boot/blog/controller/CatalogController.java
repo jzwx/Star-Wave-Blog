@@ -116,7 +116,7 @@ public class CatalogController {
     public String getCatalogEdit(Model model) {
         Catalog catalog = new Catalog(null, null);
         model.addAttribute("catalog", catalog);
-        return "/userspace/catalogedit";
+        return "userspace/catalogedit";
     }
 
     /**
@@ -129,7 +129,7 @@ public class CatalogController {
     public String getCatalogById(@PathVariable("id") Long id, Model model) {
         Catalog catalog = catalogService.getCatalogById(id);
         model.addAttribute("catalog",catalog);
-        return "/userspace/catalogedit";
+        return "userspace/catalogedit";
     }
 
 }
